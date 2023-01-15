@@ -1,0 +1,27 @@
+<!-- <p>login workdsss</p>  -->
+<!DOCTYPE html>   
+<html>   
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<title > Login Page </title>  
+</head>    
+<body>    
+    <h1> Login Form </h1>  
+    <form> 
+        
+        <div class="container">   
+            <label>Username : </label>  <span *ngIf="username.length <= 0 && validationErr ">* Username required</span><br> 
+            <input type="text" placeholder="Enter Username" name="username" id="username" [(ngModel)]="username" required> 
+            
+            <label>Password : </label>    <span *ngIf="password.length <= 0 && validationErr "> *password required</span> 
+            <input type="password" placeholder="Enter Password" name="password" id="password" [(ngModel)]="password" required> 
+            
+            <button type="submit" (click)="loginn()">Login</button>  
+           <a routerLink="/registeration">Register Here</a>
+             <!-- <input type="checkbox" checked="checked"> Remember me    -->
+             <!-- <button type="button" class="cancelbtn"> Cancel</button>    -->
+            <!-- Forgot <a href="#"> password? </a>     -->
+        </div>   
+    </form>     
+</body>     
+</html>    -

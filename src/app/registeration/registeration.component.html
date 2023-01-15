@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>home page</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1> Registration form </h1>
+        <form name="registration" id="form" class="registartion-form">
+            <!-- <p *ngIf="validationErr">Please fill all the field</p> -->
+            <table>
+              <tr>
+                <td><label for="name">Name:</label></td>
+                <td><input type="text" name="name" id="name" placeholder="your name" [(ngModel)]="name" required>
+                    <span *ngIf="name.length <= 0 && validationErr ">Username required</span> 
+                </td>
+                </tr>
+                <tr>
+                <td><label for="email">Email:</label></td>
+                 <td>
+                    <!-- <input type="email" name="email"
+                    placeholder="Enter a gmail address"
+                    pattern=".+@gmail.com">  -->
+                     <input type="email" name="email" id="email" placeholder="your email" [(ngModel)]="email" pattern=".+@gmail.com" required>
+                     <span *ngIf="email.length <= 0 && validationErr  " > Password required</span>
+                    </td> 
+                </tr>
+                 <tr>
+                    <td><label for="Account">Account:</label></td>
+                    <td><input type="text" name="account" id="account" placeholder="your account"  [(ngModel)]="account" required>
+                        <span *ngIf="account.length <= 0 && validationErr "> Account required</span></td>
+                </tr> 
+                
+                <!-- <tr>
+                    <td><label for="phoneNumber">Phone Number:</label></td>
+                    <td><input type="tel" name="phonenumber" id="phonenumber" [(ngModel)]="phonenumber"></td>
+                </tr>  -->
+
+
+                <tr>
+                    <td><label for="name">Username:</label></td>
+                    <td><input type="text" name="username" id="username" placeholder="your name" [(ngModel)]="username"
+                            required> <span *ngIf="username.length <= 0 && validationErr "> Name required</span></td>
+
+                </tr>
+                <tr>
+                    <td><label for="password">Password:</label></td>
+                    <td><input type="password" name="password" id="password" placeholder="your password"
+                            [(ngModel)]="password" required> <span *ngIf="password.length <= 0 && validationErr ">
+                            Password required</span></td>
+
+                </tr>
+                <!-- <tr>
+                    <td><label for="password">Confirm Password:</label></td>
+                    <td><input type="password" name="password" id="password" placeholder="your password"
+                            [(ngModel)]="confirmpassword" required> <span *ngIf="confirmpassword.length <= 0 && validationErr ">
+                            Password required</span></td>
+
+                </tr> -->
+                <!-- <tr>
+                    <td><label for="password">confirm password:</label></td>
+                    <td><input type="password" name="password" id="password1"></td>
+                </tr> -->
+
+
+                <!-- <tr>
+                <td><label for="about">About:</label></td>
+                <td><textarea name="about" id="about" placeholder="Write about yourself..."></textarea></td>
+                </tr> -->
+                <tr>
+
+                    <td colspan="2"><input type="submit" (click)="r()" class="submit" value="submit" /></td>
+                </tr>
+                <div>
+                    <button type="submit"><a routerLink="/login">Already have an account?Login Here</a></button>
+                </div>
+            </table>
+
+        </form>
+    </div>
+</body>
+
+</html>

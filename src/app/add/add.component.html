@@ -1,0 +1,119 @@
+<!-- <p>add works!</p> -->
+<!-- <----header--> 
+<!-- <ul class="nav">
+    <li><a routerLink="/home" >Home</a></li>
+    <li><a routerLink="/addproject" >Add Project</a></li>
+    <li><a routerLink="/list"  >List</a></li>
+     <li><a routerLink="/update" >Update</a></li> -->
+    <!-- <li><a routerLink="/about" >About Us</a></li>
+    <li><a routerLink="/contact" >Contact Us</a></li>
+    <li><a (click)="token()">Log Out</a></li>
+</ul> --> 
+ <!-- <--header-->  
+<app-header></app-header>
+<div class="id"><h1>Add Project</h1></div>
+<div class="formbold-main-wrapper">
+    <!-- Author: FormBold Team -->
+    <!-- Learn More: https://formbold.com -->
+    <div class="formbold-form-wrapper">
+      <form >
+        <p *ngIf="validationErr">Please fill all the field</p>
+        <div class="formbold-mb-5">
+          <label for="name" class="formbold-form-label"> Project Name </label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            [(ngModel)]="projectname"
+            class="formbold-form-input" required
+          /> 
+          <!-- <span *ngIf="projectname.length <= 0 && validationErr "> Please fill</span>  -->
+        </div>
+        
+        <div class="formbold-mb-3">
+            <label for="message" class="formbold-form-label">
+              Description
+            </label>
+            <textarea
+              rows="6"
+              name="message"
+              id="message"
+              [(ngModel)]="description"
+              class="formbold-form-input" required
+            > 
+             <!-- <span *ngIf="description.length <= 0 && validationErr "> Please fill</span> -->
+             </textarea>
+          </div>
+          <div class="formbold-mb-5">
+            <label for="phone" class="formbold-form-label"> Manager </label>
+            <input
+              type="text"
+              name="phone"
+              id="phone"
+              [(ngModel)]="manager"
+              class="formbold-form-input" required
+            /> <span *ngIf="manager.length <= 0 && validationErr "> Please fill</span> 
+          </div>
+          <div class="formbold-mb-5 formbold-pt-3">
+            <label class="formbold-form-label formbold-form-label-2">
+              Team Members
+            </label>
+            <div class="flex flex-wrap formbold--mx-3">
+              <div class="w-full sm:w-half formbold-px-3">
+                <div class="formbold-mb-5">
+                  <input
+                    type="text"
+                    name="area"
+                    id="area"
+                    placeholder="Team Member1"
+                    [(ngModel)]="teammember1" 
+                    class="formbold-form-input"
+                  />
+                </div>
+              </div>
+              <div class="w-full sm:w-half formbold-px-3">
+                <div class="formbold-mb-5">
+                  <input
+                    type="text"
+                    name="city"
+                    id="city"
+                    placeholder="Team Member2"
+                    [(ngModel)]="teammember2"
+                    class="formbold-form-input"
+                  />
+                </div>
+              </div>
+              <div class="w-full sm:w-half formbold-px-3">
+                <div class="formbold-mb-5">
+                  <input
+                    type="text"
+                    name="state"
+                    id="state"
+                    placeholder="Team Member3"
+                    [(ngModel)]="teammember3"
+                    class="formbold-form-input"
+                  />
+                </div>
+              </div>
+              <div class="w-full sm:w-half formbold-px-3">
+                <div class="formbold-mb-5">
+                  <input
+                    type="text"
+                    name="post-code"
+                    id="post-code"
+                    placeholder="Team Member4"
+                    [(ngModel)]="teammember4"
+                    class="formbold-form-input"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div>
+            <button class="formbold-btn" type="submit" (click)="addproject()">Add Project</button>  
+          </div>
+        </form>
+      </div>
+    </div>
+  

@@ -1,0 +1,51 @@
+<!-- <p>list works!</p> -->
+<!-- <ul class="nav">
+    <li><a routerLink="/home" >Home</a></li>
+    <li><a routerLink="/addproject" >Add Project</a></li>
+    <li><a routerLink="/list"  >List</a></li> -->
+    <!-- <li><a routerLink="/update" >Update</a></li> -->
+    <!-- <li><a routerLink="/about" >About Us</a></li>
+    <li><a routerLink="/contact" >Contact Us</a></li>
+    <li><a routerLink="/" >Log Out</a></li>
+</ul> -->
+<app-header></app-header>
+<div class=" i"><h1 >Project list</h1></div>
+
+<div>
+<table class="tablecolor" >
+
+    <thead class="thead" >  
+       <tr>  
+         <th>ID</th>  
+         <th>ProjectName</th>  
+         <th>Description</th>  
+          <th>Manager</th>  
+         <th colspan="4">TeamMembers</th> 
+         <th colspan="2">Actions</th> 
+       </tr>  
+   </thead >     
+      <tbody> 
+          
+      <tr *ngFor="let v of data"> 
+         
+       <td>{{ v.id }}</td> 
+       <td>{{ v.projectname}}</td>  
+       <td>{{ v.description }}</td>   
+       <td>{{ v.manager }}</td>
+       <td>{{ v.teammember1}}</td>
+       <td>{{ v.teammember2}}</td>
+       <td>{{ v.teammember3}}</td>
+       <td>{{ v.teammember4}}</td> 
+       
+       <td><button id="button1"><a routerLink="/update/{{v.id}}" >Edit</a></button></td>
+        <!-- <td><button><a routerLink="/update" >update</a></button></td>  -->
+        <td><button id="button2" (click)="delete(v.id)" >Delete</button></td>
+       </tr>   
+      </tbody> 
+</table>  
+</div>
+
+   
+
+   
+
